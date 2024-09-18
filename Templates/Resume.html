@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Manamrit Singh</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background-color: #f5f5f5;
+            height: 100vh;
+            overflow: auto;
+        }
+
+        .resume-container {
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height */
+            background-color: white;
+            padding: 15mm;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .item-title {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .item-title span {
+            text-align: right;
+        }
+
+        .company-info {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .company-info span {
+            text-align: right;
+        }
+
+        .item {
+            margin-bottom: 10px;
+        }
+
+        .skills-table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .skills-table td {
+            padding: 5px 10px;
+        }
+
+        .list-item {
+            margin-bottom: 5px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .section ul li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-container">
+        <div class="header">
+            <h1>Manamrit Singh</h1>
+            <p>+1 (914) 240 3805 | Brooklyn, NY</p>
+            <p><a href="mailto:ms16006@nyu.edu">manamritsingh426@gmail.com</a> | 
+            <a href="https://www.linkedin.com/in/manamritsingh/">LinkedIn</a></p>
+        </div>
+
+        <!-- Education Section -->
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="item">
+                <p class="item-title">MS Computer Science, New York University <span>(Expected 2026)</span></p>
+            </div>
+            <div class="item">
+                <p class="item-title">B.E. Computer Engineering, Thapar Inst. of Engineering and Technology <span>(2020 - 2024)</span></p>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="section">
+            <h2 class="section-title">Skills</h2>
+            <table class="skills-table">
+                <tr>
+                    <td><strong>Technical Skills</strong></td>
+                    <td>Python, Machine Learning, C++, NLP</td>
+                </tr>
+                <tr>
+                    <td><strong>Soft Skills</strong></td>
+                    <td>Problem Solver, Conflict Resolution, Adaptable</td>
+                </tr>
+                <tr>
+                    <td><strong>Misc Skills</strong></td>
+                    <td>Photography and Music</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="section">
+            <h2 class="section-title">Experience</h2>
+            <div class="item">
+                <p class="item-title">Software Engineer Intern <span>(Mar 2024 - Jun 2024)</span></p>
+                <p class="company-info">Reliable Power Alternatives Corp <span>(Fort Lauderdale, FL)</span></p>
+                <ul>
+                    <li>Automated an internal task reducing run times from 2+ hours to 30 seconds.</li>
+                    <li>Roughly USD 100 saved on each run of the application.</li>
+                    <li>Used Python, tkinter, Json Restful APIs, openpyxl, and pypdf for the project.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="section">
+            <h2 class="section-title">Projects</h2>
+            <div class="item">
+                <p class="item-title"><b>Facial Recognition App using Machine Learning</b></p>
+                <p>Attempt to solve a real-life problem at TIET where it is difficult to mark attendance due to large classroom sizes.</p>
+                <ul>
+                    <li>Fine-tuned VGG model as per requirements.</li>
+                    <li>Interactive Mobile app with GPS Spoof detection and Firebase Database using Flutter.</li>
+                </ul>
+            </div>
+            <div class="item">
+                <p class="item-title"><b>Music Generation using AI and Genetic Algorithm</b></p>
+                <p>Made a solution for EDM (electronic Dance Music) artists.</p>
+                <ul>
+                    <li>Takes an audio clip and produces a sound that is similar to the audio clip further used as part of the EDM track.</li>
+                    <li>Uses Siamese networks, Dance diffusion, and Genetic Algorithm.</li>
+                </ul>
+            </div>
+            <div class="item">
+                <p class="item-title"><b>Autonomous Path Detecting Vehicle</b></p>
+                <p>This vehicle is capable of moving on a black line and avoiding obstacles.</p>
+                <ul>
+                    <li>Senses the stations and stops there for the desired period.</li>
+                    <li>Included appropriate hardware selection and electronic design using CAD tool (EAGLE).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Extra-Curricular Activities Section -->
+        <div class="section">
+            <h2 class="section-title">Extra-Curricular Activities</h2>
+            <ul>
+                <li>Head of Photography at Fine Arts and Photography Society at TIET.</li>
+            </ul>
+        </div>
+
+        <!-- Certifications Section -->
+        <div class="section">
+            <h2 class="section-title">Certifications</h2>
+            <ul>
+                <li>Fundamentals of TinyML – HarvardX 
+                    <a href="https://courses.edx.org/certificates/3e3e9e5435d64936b8e601e32f02b1e0" target="_blank">[Credential]</a>
+                </li>
+                <li>Mastering Data Structures & Algorithms using C and C++ 
+                    <a href="https://www.udemy.com/certificate/UC-421b6dfe-2048-425a-807b-59853629c958/" target="_blank">[Credential]</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Achievements Section -->
+        <div class="section">
+            <h2 class="section-title">Achievements</h2>
+            <ul>
+                <li>Won USD 200 at TiEU App-a-thon Fall 2022<br>
+                    Wrote the Driver code. Created and delivered a live as well as video presentation.
+                    <a href="https://devpost.com/manamritsingh426" target="_blank">Devpost Link</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
