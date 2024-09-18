@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - {{ name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .resume-container {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+        .header {
+            text-align: center;
+        }
+        .header h1 {
+            margin-bottom: 5px;
+            font-size: 24px;
+        }
+        .header p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .section {
+            margin-top: 20px;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 2px solid #000;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .item-title {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .item-title span {
+            float: right;
+            font-weight: normal;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .company-info {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .company-info span {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>{{ name }}</h1>
+            <p>{{ phone }} | {{ location }}</p>
+            <p><a href="mailto:{{ email }}">{{ email }}</a> | 
+            <a href="{{ linkedin }}">{{ linkedin }}</a></p>
+        </div>
+
+        <!-- Education Section -->
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            {% for education in education_list %}
+                <div class="item">
+                    <p class="item-title">{{ education.degree }}, {{ education.school }} <span>({{ education.graduation_year }})</span></p>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Skills Section -->
+        <div class="section">
+            <h2 class="section-title">Skills</h2>
+            <ul>
+                {% for skill_category, skills in skill_list.items %}
+                    <li><strong>{{ skill_category }}:</strong> {{ skills|join:", " }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="section">
+            <h2 class="section-title">Experience</h2>
+            {% for job in experience_list %}
+                <div class="item">
+                    <p class="item-title">{{ job.title }} <span>({{ job.start_date }} - {{ job.end_date }})</span></p>
+                    <p class="company-info">{{ job.company }} <span>({{ job.location }})</span></p>
+                    <ul>
+                        {% for responsibility in job.responsibilities %}
+                            <li>{{ responsibility }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Projects Section -->
+        <div class="section">
+            <h2 class="section-title">Projects</h2>
+            {% for project in project_list %}
+                <div class="item">
+                    <p class="item-title">{{ project.name }}</p>
+                    <p>{{ project.description }}</p>
+                    <ul>
+                        {% for detail in project.details %}
+                            <li>{{ detail }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Certifications Section -->
+        <div class="section">
+            <h2 class="section-title">Certifications</h2>
+            <ul>
+                {% for certification in certification_list %}
+                    <li>{{ certification.name }} <a href="{{ certification.link }}">[Credential]</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Achievements Section -->
+        <div class="section">
+            <h2 class="section-title">Achievements</h2>
+            <ul>
+                {% for achievement in achievement_list %}
+                    <li>{{ achievement.description }} <a href="{{ achievement.link }}">[More Info]</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
